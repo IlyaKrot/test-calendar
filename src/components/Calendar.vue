@@ -105,7 +105,8 @@ const calendarDays = computed(() => {
   const month = currentMonth.value;
 
   const daysInCurrent = new Date(year, month + 1, 0).getDate();
-  const firstWeekday = new Date(year, month, 1).getDay();
+  const jsDay = new Date(year, month, 1).getDay();
+  const firstWeekday = jsDay === 0 ? 6 : jsDay - 1;
   const daysInPrev = new Date(year, month, 0).getDate();
 
   const days: dateType[] = [];
