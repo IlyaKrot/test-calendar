@@ -1,5 +1,7 @@
 <template>
-    <Calendar :date="date" @change-date="changeDate"></Calendar>
+    <div class="app">
+        <Calendar :date="date" @change-date="changeDate"></Calendar>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -18,4 +20,10 @@ const changeDate = (d: Date): void => {
 </script>
 
 <style scoped>
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 </style>
